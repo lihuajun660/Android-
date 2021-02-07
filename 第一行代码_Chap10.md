@@ -1,4 +1,4 @@
-10.2.2
+###10.2.2
 ============
 1）Android的UI也是线程不安全的，不允许在子线程中进行UI操作。
 2）使用异步消息处理来解决子线程中进行UI操作的问题。
@@ -55,19 +55,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 10.2.3  解析异步消息处理机制
 =================
-1. Message
+#1. Message
 -----------
 Message是在线程之间传递的消息，它可以在内部携带少量的信息，用于在不同线程之间交互数据。
 
-2. Handler
+#2. Handler
 -----------
 用于发送和处理信息 sendMessage()方法  ----->  handleMessage()方法
 
-3. MessageQueue
+#3. MessageQueue
 -----------
 每个线程中，只会有一个MessageQueue对象
 
-4. Looper
+#4. Looper
 -----------
 是MessageQueue的管家，调用looper的loop()方法后，就会进入到一个无限循环中，然后每当发现MessageQueue中存在一条信息，就会将它取出，并传递到Handler的handleMessage()方法中，每个线程也只会有一个线程对象。
 *一句话：会一直尝试从MessageQueue中取出待处理消息，最后分发回Handler的handleMessage()方法中*
@@ -109,7 +109,7 @@ onBind()是继承自Service类的，说明这是一个服务。onBind()方法是
     public void onDestroy() {
         super.onDestroy();
     }
-    ```
+```
 
 10.4 服务的生命周期
 ==================
